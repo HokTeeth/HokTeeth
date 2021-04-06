@@ -1,0 +1,18 @@
+﻿.HokCanvasClass {
+    width: 90px;
+    height: 60px;
+    padding-top: 15px;
+    cursor: pointer;
+}
+
+#ImgReload {
+    border-width: 0;
+    background-color: #FFFFFF;
+    outline: 0;
+}
+
+#labelForErr{
+    color:red;
+    font-family:微軟正黑體;
+    font-size:15px;
+}

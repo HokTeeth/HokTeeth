@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 合康生醫股份有限公司</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @RenderSection("Styles", false)
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("應用程式名稱", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+            <form method="post" action="">
+                <a id="CreateBtn" title="按一下建立" href=""><img src="~/Content/Image/add.png" /></a>
+                <a id="WorkItemBtn" title="按一下檢視列表" href="http://localhost:54632/Hok_Teeth/Hok_ListPage"><img src="~/Content/Image/table.png" /></a>
+                <a id="DateBtn" title="按一下檢視行事曆" href="http://localhost:54632/Hok_Teeth/Hok_CalendarPage"><img src="~/Content/Image/calendar.png" /></a>
+                <input type="search" class="InputText" placeholder="請輸入名稱搜尋" />   
+                <a id="setup" title="按一下設定密碼" href="http://localhost:54632/Hok_Teeth/Hok_setup"><img src="~/Content/Image/gear.png" /></a>
+            </form>
+            </div>
+        </div>
+    </div>
+    <br /> 
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 合康生醫</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

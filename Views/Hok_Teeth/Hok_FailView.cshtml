@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Hok_FailView";
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Hok錯誤提示頁面</title>
+    <style>
+        .Span1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <span class="Span1" id="Span1">
+            錯誤訊息：
+            請聯絡客服人員！
+        </span>
+    </div>
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <script type="text/javascript">
+            var message = @Html.Raw(Json.Encode(TempData["ErrorMessage"]));
+            alert(message);
+        var Str = '<h5 style="color:red;">' + message + '</h5>';
+
+        $("#Span1").append(Str);
+        </script>
+    }
+</body>
+</html>

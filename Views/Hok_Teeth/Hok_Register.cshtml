@@ -1,0 +1,76 @@
+﻿@model Hok_Teeth.Domain.Dto.dto_Register
+
+@{
+    ViewBag.Title = "Hok_Register";
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    @*css放置地方*@
+    <link href="~/Css/_vwRegisterCSS/Registercss.css" rel="stylesheet" />
+</head>
+<body>
+    <form method="post" action="@Url.Action("Hok_RegisterDatas","Hok_Teeth")" id="FormSubmit">
+        <div>
+            <label id="labelForErr"> * 為必填</label>
+        </div>
+        <div>
+            <label for="Account"> * 帳號</label>
+        </div>
+        <div>
+            <input type="text" name="HokAccount" id="Account" placeholder="請輸入帳號" autocomplete="off" pattern="" />
+            <label id="labelForErr">@Html.ValidationMessageFor(model => model.HokAccount)</label>
+        </div>
+
+        <div>
+            <label for="PassWord"> * 密碼</label>
+        </div>
+        <div>
+            <input type="text" name="HokPassWord" id="PassWord" placeholder="請輸入密碼" autocomplete="off" pattern="" />
+            <label id="labelForErr">@Html.ValidationMessageFor(model => model.HokPassWord)</label>
+        </div>
+
+        <div>
+            <label for="CheckPassWord"> * 確認密碼</label>
+        </div>
+        <div>
+            <input type="text" name="HokCheckPassWord" id="CheckPassWord" placeholder="請再次輸入密碼" autocomplete="off" pattern="" />
+            <label id="labelForErr">@Html.ValidationMessageFor(model => model.HokCheckPassWord)</label>
+        </div>
+
+        <div>
+            <label for="Verification"> * 驗證</label>
+        </div>
+        <div>
+            <input type="text" name="HokVerification" id="Verification" placeholder="請輸入下方圖片驗證碼" autocomplete="off" pattern="" />
+            <label id="labelForErr">@Html.ValidationMessageFor(model => model.HokVerification)</label>
+        </div>
+
+        <div>
+            <canvas id="HokCanvas" class="HokCanvasClass" title="按一下變更圖形驗證碼"></canvas>
+            <input type="hidden" name="CheckCanvasID" id="CanvasIDforCheck" />@*塞正確的驗證碼的值 一起傳入後端去驗證是否輸入相符*@
+            <button id="ImgReload" title="按一下變更圖形驗證碼" type="button"><img src="~/Content/Image/refresh.png" /></button>
+        </div>
+
+        <div>
+            <input type="button" value="送 出" id="BtnSubmit" />
+        </div>
+
+        <div>
+            <label>已經是會員?</label>
+            <a href="http://localhost:54632/Hok_Teeth/Hok_SignIn">會員登入</a>
+        </div>
+    </form>
+</body>
+</html>
+
+@*script放置地方*@
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/_vwRegisterJS/js_CanvasRegister.js"></script>
+<script src="~/Scripts/_vwRegisterJS/js_EventRegister.js"></script>
+<script src="~/Scripts/_vwRegisterJS/RegisterJS.js"></script>

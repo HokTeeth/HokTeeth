@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "上傳專案頁面";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>合康生醫上傳專案頁面</title>
+</head>
+<body>
+    <h2>HOK_STL_Sample</h2>
+
+    <!--<input type="hidden" id="HiddenForSelectOne" />-->
+    <select id="SelectOne">
+        <option>請選擇機台</option>
+        <option>機台1</option>
+    </select>
+
+    <!--<input type="hidden" id="HiddenForSelectTwo" />-->
+    <select id="SelectTwo">
+        <option>請選擇材料塊</option>
+        <option>材料塊1</option>
+    </select>
+
+    <input type="file" id="stlfile" onchange="stlchange(this);" />
+
+    <button onclick="xAdd();">往前</button>
+    <button onclick="xReduce();">往後</button>
+    <button onclick="yAdd();">往上</button>
+    <button onclick="yReduce();">往下</button>
+    <button onclick="zAdd();">往右</button>
+    <button onclick="zReduce();">往左</button>
+
+    <button onclick="LineDown();">牙齒線向下</button>
+    <button onclick="LineUp();">牙齒線向上</button>
+    <button onclick="TeethTurn();">牙齒翻轉</button>
+    <button onclick="ClearTeeth();">刪除</button>
+    <br /><br /><br />
+
+    <div id="output"></div>
+</body>
+</html>
+
+<script src="~/Scripts/_vmUploadJS/Upload.js"></script>
